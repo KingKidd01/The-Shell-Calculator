@@ -1,0 +1,108 @@
+  body {
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Consolas, monospace;
+    background: url(background.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  .terminal-wrapper {
+    background-color: #000000;
+    width: 800px;
+    max-width: 90%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #000000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    overflow-y: auto;
+    font-family: Consolas, monospace;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: white black; /* thumb color, track color */
+    scroll-padding-right: 20px;
+  }
+
+/* Chrome, Safari, Edge */
+.terminal::-webkit-scrollbar {
+    width: 8px; /* Scrollbar thickness */
+}
+
+.terminal::-webkit-scrollbar-track {
+    background: black; /* Scrollbar background */
+}
+
+.terminal::-webkit-scrollbar-thumb {
+    background-color: white; /* Scrollbar "nob" */
+    border-radius: 10px; /* Rounded thumb */
+    border: 2px solid black; /* Optional: makes thumb smaller inside track */
+}
+
+
+.line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.prompt {
+  margin-right: 5px;
+}
+
+.top {
+  font-size: 1.5em;
+}
+
+.input-wrapper {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.content-editable {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.1em;
+  min-width: 10px;
+  font-family: inherit;
+  outline: none;
+  caret-color: transparent; 
+  position: relative;
+}
+
+.cursor {
+  position: absolute;
+  display: inline-block;
+  width: 10px;
+  height: 2px;
+  background-color: white;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+/* Twinkle animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
