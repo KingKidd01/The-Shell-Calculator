@@ -193,5 +193,4 @@ function createStars(amount) {
 
 createStars(100);
 
-
 createInputLine();
